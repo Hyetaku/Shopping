@@ -14,6 +14,6 @@ public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint 
                          AuthenticationException authException) throws IOException, ServletException {
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
     }
-    // SC_UNAUTHORIZED: 요청이 HTTP 인증을 필요로 함!
+    // SC_UNAUTHORIZED: 요청이 HTTP 인증을 필요로 함
 
 }
