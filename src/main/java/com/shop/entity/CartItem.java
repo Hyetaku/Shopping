@@ -16,11 +16,11 @@ public class CartItem {
     @Column(name = "cart_item_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cart_id")
     private Cart cart; //하나의 장바구니에 여러 item 을 담을 수 있으므로 다대일 관계로 매핑
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
     private Item item; //장바구니에 담을 상품 정보를 알아야 하므로 상품 엔티티 매핑
 
