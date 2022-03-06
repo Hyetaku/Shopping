@@ -68,10 +68,12 @@ public class ItemServiceTest {
 
         Item item = itemRepository.findById(itemId).orElseThrow(EntityNotFoundException::new);
 
-        assertEquals(itemFormDto.getItemNm(), item.getId());
+        assertEquals(itemFormDto.getItemNm(), item.getItemNm());
         assertEquals(itemFormDto.getItemSellStatus(), item.getItemSellStatus());
+        assertEquals(itemFormDto.getItemDetail(), item.getItemDetail());
         assertEquals(itemFormDto.getPrice(), item.getPrice());
-        assertEquals(itemFormDto.getStockNumber(), item.getStockNumber());
-        assertEquals(multipartFileList.get(0).getOriginalFilename(), itemImgList.get(0).getOriImgName());
+        assertEquals(itemFormDto.getStockNumber(),item.getStockNumber());
+        assertEquals(multipartFileList.get(0).getOriginalFilename(),
+                    itemImgList.get(0).getOriImgName());
     }
 }

@@ -13,7 +13,7 @@ import java.util.List;
 
 //엔티티 저장 및 수정 <S extends T> save(S entity)
 public interface ItemRepository extends JpaRepository<Item, Long>,
-        QuerydslPredicateExecutor<Item> {
+        QuerydslPredicateExecutor<Item>, ItemRepositoryCustom {
 
     //    상품명 조회 테스트
     List<Item> findByItemNm(String itemNm);
